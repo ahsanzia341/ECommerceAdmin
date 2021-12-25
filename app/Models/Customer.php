@@ -16,10 +16,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property $updated_at
  * @property $remember_token
  * @property $email_verified_at
+ * @property $stripe_id
+ * @property $pm_type
+ * @property $pm_last_four
+ * @property $trial_ends_at
+ * @property $phone
  *
  * @property CustomerAddress[] $customerAddresses
  * @property CustomerWishlist[] $customerWishlists
  * @property Invoice[] $invoices
+ * @property PromoCodeUsage[] $promoCodeUsages
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -37,7 +43,7 @@ class Customer extends Model
      *
      * @var array
      */
-    protected $fillable = ['email','name','is_verified'];
+    protected $fillable = ['email','name','is_verified','stripe_id','pm_type','pm_last_four','trial_ends_at','phone'];
 
 
     /**
@@ -62,6 +68,14 @@ class Customer extends Model
     public function invoices()
     {
         return $this->hasMany('App\Models\Invoice', 'customer_id', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function promoCodeUsages()
+    {
+        return $this->hasMany('App\Models\PromoCodeUsage', 'customer_id', 'id');
     }
     
 

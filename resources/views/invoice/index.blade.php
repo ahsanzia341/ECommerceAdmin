@@ -52,10 +52,7 @@
 											<td>{{ $invoice->total_amount }}</td>
 
                                             <td>
-                                                <form action="{{ route('invoices.destroy',$invoice->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary ink-reaction btn-raised" href="{{ route('invoices.show',$invoice->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    @csrf
-                                                </form>
+                                                <a class="btn btn-sm btn-primary ink-reaction btn-raised" href="{{ route('invoices.show',$invoice->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
                                             </td>
                                         </tr>
                                     @endforeach

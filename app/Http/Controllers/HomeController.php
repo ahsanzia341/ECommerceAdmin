@@ -29,6 +29,7 @@ class HomeController extends Controller
         $customers_count = Customer::all()->count();
         $total_sales = DB::table('invoices')->sum('total_amount');
         $total_orders = DB::table('invoices')->where('status' ,'!=', 'Completed')->orWhere('status' ,'!=',  'Canceled')->count();
+        $total_promo_codes_used = DB::table('promo_code_usages')->count();
         $users_chart_options = [
             'chart_title' => 'Customers by months',
             'report_type' => 'group_by_date',
@@ -48,6 +49,6 @@ class HomeController extends Controller
         ];
         $users_chart = new LaravelChart($users_chart_options);
         $sales_chart = new LaravelChart($sales_chart_options);
-        return view('home', compact('customers_count', 'total_sales', 'total_orders','users_chart','sales_chart'));
+        return view('home', compact('customers_count', 'total_sales', 'total_orders','users_chart','sales_chart','total_promo_codes_used'));
     }
 }

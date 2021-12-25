@@ -16,7 +16,7 @@
                         <header>Update Customer</header>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('customers.update', $customer->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" class ="form floating-label" action="{{ route('customers.update', $customer->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

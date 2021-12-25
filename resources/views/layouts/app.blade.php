@@ -16,8 +16,6 @@
         <link type="text/css" rel="stylesheet" href="{{asset('assets/css/theme-default/materialadmin.css?1425466319')}}" />
         <link type="text/css" rel="stylesheet" href="{{asset('assets/css/theme-default/font-awesome.min.css?1422529194')}}" />
         <link type="text/css" rel="stylesheet" href="{{asset('assets/css/theme-default/material-design-iconic-font.min.css?1421434286')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('assets/css/theme-default/libs/rickshaw/rickshaw.css?1422792967')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('assets/css/theme-default/libs/morris/morris.core.css?1420463396')}}" />
         <link type="text/css" rel="stylesheet" href="{{asset('assets/css/theme-default/libs/bootstrap-datepicker/datepicker3.css?1424887858')}}">
         @yield('css')
         <!-- END STYLESHEETS -->
@@ -64,9 +62,7 @@
                             </a>
                             <ul class="dropdown-menu animation-dock">
                                 <li class="dropdown-header">Config</li>
-                                <li><a href="{{asset('html/pages/profile.html')}}">My profile</a></li>
-                                <li><a href="{{asset('html/pages/blog/post.html')}}">My blog <span class="badge style-danger pull-right">16</span></a></li>
-                                <li><a href="{{asset('html/pages/calendar.html')}}">My appointments</a></li>
+                                <li><a href="{{asset('html/pages/profile.html')}}">Update profile</a></li>
                                 <li class="divider"></li>
                                 <li><a href="{{asset('html/pages/locked.html')}}"><i class="fa fa-fw fa-lock"></i> Lock</a></li>
                                 <li><a href="{{route('logout')}}" onclick="event.preventDefault();
@@ -77,13 +73,7 @@
                             </ul><!--end .dropdown-menu -->
                         </li><!--end .dropdown -->
                     </ul><!--end .header-nav-profile -->
-                    <ul class="header-nav header-nav-toggle">
-                        <li>
-                            <a class="btn btn-icon-toggle btn-default" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">
-                                <i class="fa fa-ellipsis-v"></i>
-                            </a>
-                        </li>
-                    </ul><!--end .header-nav-toggle -->
+                    
                 </div><!--end #header-navbar-collapse -->
             </div>
         </header>
@@ -186,6 +176,12 @@
                               <li><a href="{{URL('promo-codes')}}" ><span class="title">Sizes</span></a></li>
                             </ul><!--end /submenu -->
                         </li><!--end /menu-li -->
+                        <li>
+                            <a href="{{URL('reports')}}">
+                                <div class="gui-icon"><i class="md md-business fa-fw"></i></div>
+                                <span class="title">Reports</span>
+                            </a>
+                        </li>
                         <!-- END UI -->
 
                         <!-- BEGIN TABLES -->
@@ -239,23 +235,17 @@
         <!-- BEGIN JAVASCRIPT -->
         <script src="{{asset('assets/js/libs/jquery/jquery-1.11.2.min.js')}}"></script>
         <script src="{{asset('assets/js/libs/jquery/jquery-migrate-1.2.1.min.js')}}"></script>
-        <script src="{{asset('assets/js/libs/bootstrap-datepicker/bootstrap-datepicker.js')}}"></script>
         <script src="{{asset('assets/js/libs/bootstrap/bootstrap.min.js')}}"></script>
+        <script src="{{asset('assets/js/libs/bootstrap-datepicker/bootstrap-datepicker.js')}}"></script>
         <script src="{{asset('assets/js/libs/spin.js/spin.min.js')}}"></script>
         <script src="{{asset('assets/js/libs/autosize/jquery.autosize.min.js')}}"></script>
         <script src="{{asset('assets/js/libs/moment/moment.min.js')}}"></script>
-        <script src="{{asset('assets/js/libs/flot/jquery.flot.min.js')}}"></script>
-        <script src="{{asset('assets/js/libs/flot/jquery.flot.time.min.js')}}"></script>
-        <script src="{{asset('assets/js/libs/flot/jquery.flot.resize.min.js')}}"></script>
-        <script src="{{asset('assets/js/libs/flot/jquery.flot.orderBars.js')}}"></script>
-        <script src="{{asset('assets/js/libs/flot/jquery.flot.pie.js')}}"></script>
         <script src="{{asset('assets/js/libs/flot/curvedLines.js')}}"></script>
         <script src="{{asset('assets/js/libs/jquery-knob/jquery.knob.min.js')}}"></script>
         <script src="{{asset('assets/js/libs/sparkline/jquery.sparkline.min.js')}}"></script>
         <script src="{{asset('assets/js/libs/nanoscroller/jquery.nanoscroller.min.js')}}"></script>
         <script src="{{asset('assets/js/libs/d3/d3.min.js')}}"></script>
         <script src="{{asset('assets/js/libs/d3/d3.v3.js')}}"></script>
-        <script src="{{asset('assets/js/libs/rickshaw/rickshaw.min.js')}}"></script>
         <script src="{{asset('assets/js/core/source/App.js')}}"></script>
         <script src="{{asset('assets/js/core/source/AppNavigation.js')}}"></script>
         <script src="{{asset('assets/js/core/source/AppOffcanvas.js')}}"></script>
