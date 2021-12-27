@@ -135,7 +135,7 @@
                             <ul>
                               <li><a href="{{URL('categories')}}" ><span class="title">Categories</span></a></li>
                               <li><a href="{{URL('products')}}" ><span class="title">Products</span></a></li>
-<li><a href="{{URL('reviews')}}" ><span class="title">Reviews</span></a></li>
+<li><a href="{{URL('product-reviews')}}" ><span class="title">Reviews</span></a></li>
                             </ul><!--end /submenu -->
                         </li><!--end /menu-li -->
                         <!-- END EMAIL -->
@@ -173,7 +173,7 @@
                             <!--start submenu -->
                             <ul>
                               <li><a href="{{URL('colors')}}" ><span class="title">Colors</span></a></li>
-                              <li><a href="{{URL('promo-codes')}}" ><span class="title">Sizes</span></a></li>
+                              <li><a href="{{URL('sizes')}}" ><span class="title">Sizes</span></a></li>
                             </ul><!--end /submenu -->
                         </li><!--end /menu-li -->
                         <li>

@@ -3,7 +3,7 @@
     @include('css.datatables_css')
 @endsection
 @section('template_title')
-    Customer
+    Product Review
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <header>
-                                {{ __('Customer') }}
+                                {{ __('Product Review') }}
                             </header>
                             <div class="tools">
                                 <div class="btn-group">
@@ -37,28 +37,27 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Email</th>
-										<th>Name</th>
-										<th>Is Verified</th>
-										<th>Phone</th>
+										<th>Comment</th>
+										<th>Rating</th>
+										<th>User</th>
+										<th>Product</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($customers as $customer)
+                                    @foreach ($productReviews as $productReview)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $customer->email }}</td>
-											<td>{{ $customer->name }}</td>
-											<td>{{ $customer->is_verified }}</td>
-											<td>{{ $customer->phone }}</td>
+											<td>{{ $productReview->comment }}</td>
+											<td>{{ $productReview->rating }}</td>
+											<td>{{ $productReview->user->name }}</td>
+											<td>{{ $productReview->product->name }}</td>
 
                                             <td>
-                                                <form action="{{ route('customers.destroy',$customer->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary ink-reaction btn-raised" href="{{ route('customers.show',$customer->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                   
+                                                <form action="{{ route('product-reviews.destroy',$productReview->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary ink-reaction btn-raised" href="{{ route('product-reviews.show',$productReview->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
                                                 </form>
                                             </td>
                                         </tr>
@@ -68,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $customers->links() !!}
+                {!! $productReviews->links() !!}
             </div>
         </div>
     </div>

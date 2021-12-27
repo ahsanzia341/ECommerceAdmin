@@ -20,6 +20,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('promo-codes', App\Http\Controllers\PromoCodeController::class);
     Route::resource('colors', App\Http\Controllers\ColorController::class);
     Route::resource('invoices', App\Http\Controllers\InvoiceController::class);
+    Route::resource('sizes', App\Http\Controllers\SizeController::class);
+    Route::resource('product-reviews', App\Http\Controllers\ProductReviewController::class);
     Route::get('reports', [App\Http\Controllers\ReportController::class, 'index']);
 });
 

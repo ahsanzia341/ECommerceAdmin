@@ -3,7 +3,7 @@
     @include('css.datatables_css')
 @endsection
 @section('template_title')
-    Customer
+    Size
 @endsection
 
 @section('content')
@@ -15,11 +15,13 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <header>
-                                {{ __('Customer') }}
+                                {{ __('Size') }}
                             </header>
                             <div class="tools">
                                 <div class="btn-group">
-                                    
+                                    <a href="{{ route('sizes.create') }}" class="btn ink-reaction btn-raised btn-default float-right">
+                                    {{ __('Create New') }}
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -37,28 +39,25 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Email</th>
 										<th>Name</th>
-										<th>Is Verified</th>
-										<th>Phone</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($customers as $customer)
+                                    @foreach ($sizes as $size)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $customer->email }}</td>
-											<td>{{ $customer->name }}</td>
-											<td>{{ $customer->is_verified }}</td>
-											<td>{{ $customer->phone }}</td>
+											<td>{{ $size->name }}</td>
 
                                             <td>
-                                                <form action="{{ route('customers.destroy',$customer->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary ink-reaction btn-raised" href="{{ route('customers.show',$customer->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                   
+                                                <form action="{{ route('sizes.destroy',$size->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary ink-reaction btn-raised" href="{{ route('sizes.show',$size->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success ink-reaction btn-raised " href="{{ route('sizes.edit',$size->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm ink-reaction btn-raised "><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -68,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $customers->links() !!}
+                {!! $sizes->links() !!}
             </div>
         </div>
     </div>
